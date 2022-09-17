@@ -1,0 +1,16 @@
+<?php
+/** @var Task\Signup\Block\Signup $block */
+$isEnabled = $block->getIsEnabled();
+?>
+
+<?php if ($isEnabled): ?>
+    <form action="<?php echo $block->getFormAction() ?>" class="test" method="post">
+        <input id="name" name="name" type="text" placeholder="Enter Name" >
+        <input id="date" name="date" type="date" >
+
+        <button id="Submit" class="button" type="submit">Submit</button>
+    </form>
+
+<?php else: ?>
+    <h1><?= __('Form not enabled') ?></h1>
+<?php endif; ?>

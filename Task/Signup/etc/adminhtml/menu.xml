@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Task_Signup::listing" sortOrder="100" title="signup" module="Task_Signup"
+            resource="Task_Signup::listing" translate="title"
+             action="grid/grid/index"/>
+    </menu>
+</config>

@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <virtualType name="Signup" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="resourceModel" xsi:type="string">
+                Amazon\Payment\Model\ResourceModel\PendingRefund\Collection
+            </argument>
+            <argument name="mainTable" xsi:type="string">signup_table</argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument xsi:type="array" name="collections">
+                <item xsi:type="string" name="Signup_data_source">Signup</item>
+            </argument>
+        </arguments>
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="task_signup_signup_listing_data_source" xsi:type="string">DevGridCategoryCollection</item>
+            </argument>
+        </arguments>
+    </type>
+    <preference for="Task\Signup\Api\Data\SignupInterface" type="Task\Signup\Model\Index"/>
+    <preference for="Task\Signup\Api\SignupRepositoryInterface" type="Task\Signup\Model\SignupRepository" />
+
+    <virtualType name="DevGridCategoryCollection" type="Task\Signup\Ui\DataProvider\Signup\Listing\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">signup</argument>
+            <argument name="resourceModel" xsi:type="string">Task\Signup\Model\ResourceModel\Index</argument>
+        </arguments>
+    </virtualType>
+</config>

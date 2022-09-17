@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <referenceBlock name="navigation.sections" remove="true"/>
+    <referenceContainer name="content">
+        <block
+            template= "Task_Signup::index.phtml"
+            class="Task\Signup\Block\Signup"
+            name="signup"/>
+    </referenceContainer>
+    <head>
+        <css src="Task_Signup::css/custom.css"/>
+    </head>
+</page>
